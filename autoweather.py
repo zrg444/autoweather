@@ -3,14 +3,14 @@ import json
 from datetime import datetime
 from twilio.rest import Client
 
-account_sid = ("AC761e2aad0c2959eee6fb7b9988155456")
-auth_token = ('20856f1ea8454f4a60821a97f6f9dc7f')
+account_sid = ("ACCOUNT-SID-HERE")
+auth_token = ('AUTH-TOKEN-HERE')
 client = Client(account_sid, auth_token)
 
 today = datetime.today().strftime("%Y-%m-%d")
 day = datetime.today().strftime("%B, %d")
 
-api_key = "1fd0613b9e714ebeac032374c5c4e2a2"
+api_key = "API-KEY-HERE"
 base_url = "http://api.weatherbit.io/v2.0/forecast/daily?"
 city_name = "York,PA,USA"
 url = base_url+"city="+city_name+"&units=I"+"&key="+api_key
@@ -43,8 +43,8 @@ weather_message = """
 
 message = client.messages .create(
     body = (weather_message),
-    from_ = "+14125577235",
-    to = "+14126895814")
+    from_ = "+1##########",
+    to = "+1##########")
 print(message.sid)
 
 print("\nText sent!\n")
